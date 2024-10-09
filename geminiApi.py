@@ -4,6 +4,11 @@ from dotenv import load_dotenv
 import typing_extensions as typing
 import json
 
+# JSON 파일 읽기
+with open('삼성전자기사.json', 'r', encoding='utf-8') as file:
+    articles = json.load(file)
+
+
 # Load environment variables
 load_dotenv()
 GOOGLE_API_KEY = os.getenv('MY_KEY')
@@ -14,29 +19,32 @@ class Analysis(typing.TypedDict):
     evaluation: str
     summary: str
 
-model = genai.GenerativeModel("gemini-1.5-pro-latest")
+model = genai.GenerativeModel("gemini-1.5-flash")
 
-# Example article content
-article_content = """
-    평가 도입된 2011년부터 줄곧 최우수…유일 사례\n\n\n\n한종희 삼성전자 대표이사(부회장)가 지난 3월 28일 수원 라마다 호텔에서 협성회 회원들과 함께 개최한 ‘2024년 상생협력데이’에서 인사말을 하고 있다. [사진 삼성전자]  \n[이코노미스트 정두용 기자] 삼성전자가 동반성장위원회가 선정하는 ‘2023년도 동반성장지수 평가’에서 국내 기업 최초로 13년 연속 최우수 등급을 받았다고 8일 밝혔다. 해마다 다양한 기업이 최우수 등급을 받지만, 동반성장지수 평가가 도입된 2011년부터 13년 연속 최우수 등급을 받은 기업은 삼성전자가 유일하다.\n\n동반성장지수는 대·중소기업 간 동반성장을 촉진하기 위해 매년 기업별 동반성장 수준을 평가해 계량화한 지표다. 최우수·우수·양호·보통·미흡 등 5개 등급으로 나뉜다.\n\n삼성전자 측은 “‘상생추구·정도경영’이라는 핵심 가치 아래 다양한 상생협력 활동을 펼치고 있다”며 “1차 협력사뿐 아니라 2·3차 협력사는 물론 나아가 미거래 중소기업까지 지원하며 상생협력의 지평을 넓혀가고 있다”고 전했다.\n\n협력사에 실질적 자금 지원…인재 육성도 활발\n\n삼성전자는 2005년 국내 기업 최초로 협력사 거래대금을 현금으로 지급하는 결정을 내린 바 있다. 2010년부터는 1조4000원원 규모의 상생펀드를 조성, 협력사의 기술개발·설비투자 자금 등을 저금리로 대출해 주고 있다.\n\n올해부터는 삼성디스플레이와 함께 1조원 규모의 ‘협력사 ESG 펀드’를 조성해 6년간 환경·안전 개선과 고효율 생산설비 전환 등 1차 협력사가 ESG 투자에 활용할 수 있도록 무이자 대출을 지원한다. 원자재 가격 및 최저임금 인상분을 납품단가에도 반영하고 있다. 반도체 우수 협력사 대상으로 2010년부터 지금까지 약 6700억원의 인센티브를 지급했다.\n\n삼성전자는 협력사 혁신을 위해 기술과 제조·품질은 물론 원가 경쟁력 등 다방면으로 지원하고 있다. 협력사의 미래 성장 동력 발굴을 지원하기 위해 2009년부터 국내 대학·연구기관이 보유한 기술을 소개하는 기술설명회를 개최하는 중이다. 삼성전자가 보유한 특허를 미거래 중소기업까지 개방해 2100여 건을 무상 양도했다.\n\n2013년부터는 중기부와 함께 ‘공동투자형 기술개발사업’에 기금을 출연해 약 200억원을 지원했다. 2022년 신규 펀드 300억원을 추가 조성, 5년간 차세대 기술과 ESG 기술 확보 등을 지원 중이다.\n\n전문인력으로 구성된 상생협력아카데미 컨설팅센터를 통해 협력사의 제조·품질 등 다양한 현안 발굴 및 개선 활동을 지원하고 있다. 삼성전자가 다년간 축적한 혁신 사례를 2000여 개 협력사에 무상으로 전수해 원가 경쟁력 향상 등에도 기여하는 중이다.\n\n2013년에 설립된 삼성전자 상생협력아카데미에서는 협력사 맞춤형 인력 양성 프로그램도 운영하고 있다. ▲신입사원 입문 교육 ▲미래경영자 ▲제조·품질·구매·영업 직무교육 등 삼성 임직원 교육과정에 준하는 다양한 교육프로그램을 협력사 임직원 20만명 대상으로 진행했다. 또 ▲삼성 협력사 채용박람회 ▲협력사 온라인 채용관 등을 통해 약 7500명의 인재 채용을 지원했다.\n\n삼성전자는 2015년부터 열악한 중소기업의 제조혁신을 위해 맞춤형 스마트공장 구축을 지원했다. 2018년부터는 중기부·중기중앙회와 협력해 삼성전자와의 거래 여부와 상관없이 지원이 필요한 모든 중소·중견기업을 대상으로 확대해 운영하고 있다.\n\n회사 측은 “수십년 제조·품질 노하우를 보유한 삼성의 전문가 170명이 현장에 직접 상주하며 제조현장 혁신·인력 양성·판로 개척·ESG지원, 사후 관리 등을 종합 지원하고 있다”며 “삼성전자는 10년간 전국 중소기업 약 3300곳에 스마트공장 구축을 지원했다”고 전했다.\n\n삼성전자는 또 2023년부터는 데이터 기술을 활용해 중소기업 제조 현장을 지능형 공장으로 고도화하고, 인구감소 지역의 중소기업을 우선 지원 대상으로 선정해 중소기업의 지속가능경영(ESG) 경쟁력을 높이는 ‘스마트공장 3.0’ 사업을 지원하고 있다. 올해부터 중기부·농식품부와 농어촌지역 K푸드 스마트공장을 육성하고 지자체와 함께 기초형 스마트공장을 지원하여 지역 균형 발전을 위해 노력할 예정이다.\n\n삼성은 ‘함께가요 미래로! Enabling People’이라는 사회공헌(CSR) 비전 아래 청소년 교육과 상생협력의 사회공헌 활동을 펼치고 있다. 청소년 교육 중심 활동으로는 ▲삼성청년SW아카데미 ▲삼성희망디딤돌 ▲삼성드림클래스 ▲삼성푸른코끼리 ▲기능올림픽기술교육과 같이 청소년의 잠재력을 최대한 발휘할 수 있도록 하는 프로그램을 운영하고 있다.\n\n또 ▲중소기업 스마트공장 전환 지원 ▲C랩(인사이드·아웃사이드) ▲상생펀드·ESG 펀드 조성 ▲협력회사 인센티브 지급 ▲삼성미래기술육성사업 ▲삼성 안내견 사업 ▲나눔키오스크 ▲삼성 다문화청소년 지원 사업 ▲삼성 노인 지원 사업 등 상생협력 프로그램도 진행하고 있다.
-"""
+def analysis_article(article_content):
+    # Example article content
 
-# Define the prompt with the article content
-prompt = f"""
-아래의 Article을 바탕으로, 이 기사가 종목에 대해 어떤 평가를 하고 있는지, [긍정/ 부정/ 중립] 중 어떤 평가를 내리고 있는지 단어 3개 중 하나를 선택해 알려주고, 종목에 대한 중요 내용을 두괄식으로 요약해서 JSON FORMAT으로 줘.
+    # Define the prompt with the article content
+    prompt = f"""
+    아래의 Article을 바탕으로, 이 기사가 종목에 대해 어떤 평가를 하고 있는지, [긍정/ 부정] 중 어떤 평가를 내리고 있는지 단어 2개중 하나를 선택해 알려주고, 종목에 대한 중요 내용을 요약해서 요약문 형태로 줘. 전체 결과는 JSON FORMAT으로 줘.
 
-Article:
-{article_content}
+    Article:
+    {article_content}
 
-Use this JSON schema:
+    Use this JSON schema:
 
 
-Analysis = {{'evaluation': str, 'summary': str}}
-Return: Analysis
-"""
+    Analysis = {{'evaluation': str, 'summary': str}}
+    Return: Analysis
+    """
 
-# Generate content from the model
-result = model.generate_content(prompt)
-result_text = result.candidates[0].content.parts[0].text
-cleaned_response = result_text.replace("```json", "").replace("```", "").strip() # 마크다운 형식 제거
-print(json.loads(cleaned_response))
+    # Generate content from the model
+    result = model.generate_content(prompt)
+    result_text = result.candidates[0].content.parts[0].text
+    cleaned_response = result_text.replace("```json", "").replace("```", "").strip()
+    print(json.loads(cleaned_response))
+
+for article in articles:
+    analysis_article(article['content'])
+    print()
+    print()
