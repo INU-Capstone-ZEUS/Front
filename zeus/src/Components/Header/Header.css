@@ -1,0 +1,55 @@
+/* General Styling */
+header {
+  display: flex;
+  justify-content: space-between; /* Left and right alignment */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  height: 30px;
+}
+
+.navbar {
+  flex-grow: 1; /* Take up remaining space */
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: flex-end; /* Align nav links to the right */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.auth-buttons {
+  display: flex;
+  margin-left: 10px;
+}
+
+.auth-buttons button {
+  margin-left: 10px;
+  padding: 5px 15px;
+  border: 1px solid #333;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.auth-buttons .register {
+  background-color: #333;
+  color: #fff;
+}
