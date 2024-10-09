@@ -32,6 +32,7 @@ sorce_code = driver.page_source
 #html = BeautifulSoup(source_code, "lxml")
 html = BeautifulSoup(sorce_code,"html.parser")
 
+# 중복 뉴스 제거
 for tr in html.select('tr.relation_lst '):
     tr.decompose()
 
@@ -46,8 +47,6 @@ articles = []
 for a in aTags:
     href = a.attrs['href']
     links.append(href)
-
-
 
 
 # 추출한 href 링크에 대해 반복
@@ -88,11 +87,6 @@ for i in range(len(links)):
 
     # 기사 제목 추출
     article_title = soup.select_one('#title_area span').text.strip()
-
-    # 출력 또는 저장
-    print(article_title)
-    print(article_content)
-    print()
 
     article = {
         'title' : article_title,
