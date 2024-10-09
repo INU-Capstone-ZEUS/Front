@@ -32,6 +32,9 @@ sorce_code = driver.page_source
 #html = BeautifulSoup(source_code, "lxml")
 html = BeautifulSoup(sorce_code,"html.parser")
 
+for tr in html.select('tr.relation_lst '):
+    tr.decompose()
+
 # 기사 item의 신문사 / 날짜 / 뉴스 주소 갖고 오기
 infos = html.select('.info')
 dates = html.select('.date')
@@ -43,6 +46,9 @@ articles = []
 for a in aTags:
     href = a.attrs['href']
     links.append(href)
+
+
+
 
 # 추출한 href 링크에 대해 반복
 for i in range(len(links)):
@@ -99,7 +105,7 @@ for i in range(len(links)):
     # 리스트에 기사 추가
     articles.append(article)
 
-with open( str(company_name) + '기사.json', 'w', encoding='utf-8') as f:
+with open( str(company_code) + '.json', 'w', encoding='utf-8') as f:
     json.dump(articles, f, ensure_ascii=False, indent=4)
 
 driver.quit()
