@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -74,10 +75,6 @@ for i in range(len(links)):
     for div in soup.select('div.artical-btm'):
         div.decompose()
 
-    # for script in soup.select('_VOD_IMAGE_REPLACE_TEMPLATE'):
-    #     script.decompose()
-    #     print('----------스크립트 제거!!!!!!!!----------')
-
     # br 태그는 줄바꿈으로 변환
     for br in soup.find_all("br"):
         br.replace_with("\n")
@@ -99,7 +96,12 @@ for i in range(len(links)):
     # 리스트에 기사 추가
     articles.append(article)
 
-with open( str(company_code) + '.json', 'w', encoding='utf-8') as f:
+output_dir = os.path.join(os.getcwd(), "news")
+os.makedirs(output_dir, exist_ok=True)  # 폴더가 없으면 생성
+
+file_path = os.path.join(output_dir, str(company_code) + '.json')
+
+with open( file_path, 'w', encoding='utf-8') as f:
     json.dump(articles, f, ensure_ascii=False, indent=4)
 
 driver.quit()
