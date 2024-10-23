@@ -1,0 +1,188 @@
+{
+    "cards": [
+      {
+        "_id": 1,
+        "name": "Sales",
+        "icon": "bi bi-cart",
+        "amount": 145,
+        "percentage": 0.12,
+        "active": true
+      },
+      {
+        "_id": 2,
+        "name": "Revenue",
+        "icon": "bi bi-currency-dollar",
+        "amount": 3246,
+        "percentage": 0.08,
+        "active": false
+      },
+      {
+        "_id": 3,
+        "name": "Customers",
+        "icon": "bi bi-people",
+        "amount": 1244,
+        "percentage": -0.11,
+        "active": false
+      }
+    ],
+    "news": [
+      {
+        "_id": 1,
+        "img": "../assets/items/news-1.jpg",
+        "title": "“고구마 풍미 가득”…빙그레, ‘빵또아 고구마케이크’ 출시",
+        "subtitle": "기사는 빙그레의 신제품 '빵또아 고구마케이크' 출시 소식을 전달하고 있으며, 빙그레 종목의 주가 전망이나 재무적 성과에 대한 언급은 없습니다.",
+        "link": "https://n.news.naver.com/mnews/article/022/0003979447"
+      },
+      {
+        "_id": 2,
+        "img": "../assets/items/news-2.jpg",
+        "title": "[오늘의신상]신동엽 공동개발 '블랙서클 하이볼' 外",
+        "subtitle": "빙그레의 신제품 '빵또아 고구마케이크' 출시 소식을 다루고 있으며, 고구마 케이크를 아이스크림으로 즐기고자 하는 소비자를 공략할 계획이라고 언급함으로써 긍정적인 평가를 내리고 있다고 판단됩니다.",
+        "link": "https://n.news.naver.com/mnews/article/277/0005488734"
+      },
+      {
+        "_id": 3,
+        "img": "../assets/items/news-3.jpg",
+        "title": "빙그레, 액상형 다이어트 건기식 `슬림 바이브 다이어트 샷 푸룬맛` 출시",
+        "subtitle": "빙그레가 건강지향 브랜드 '빙그레 건강tft'를 통해 다이어트 신제품 '슬림 바이브 다이어트 샷 푸룬맛'을 출시하여, 새로운 수익원 창출 및 브랜드 확장 가능성을 보여주고 있기 때문입니다.",
+        "link": "https://n.news.naver.com/mnews/article/029/0002910420"
+      },
+      {
+        "_id": 4,
+        "img": "../assets/items/news-4.jpg",
+        "title": "미식의 고장 프랑스에서 위상 높인 K푸드…혁신 제품에 이름 올렸다",
+        "subtitle": "기사 내용은 K푸드의 유럽 진출을 위한 '시알 파리 2024' 박람회 참가에 대한 소개이며, 빙그레 종목에 대한 언급은 식물성 메로나 제품이 비건 트렌드에 맞춰 출품된 것 외에는 없습니다.",
+        "link": "https://n.news.naver.com/mnews/article/008/0005103972"
+      },
+      {
+        "_id": 5,
+        "img": "../assets/items/news-5.jpg",
+        "title": "“애들보다 ‘어른이들’이 더 난리”…유통가 휩쓴 ‘대세 캐릭터’ 티니핑",
+        "subtitle": "빙그레는 대한적십자사 창립 119주년 기념식에서 사회공헌유공 감사패를 받았습니다. 빙그레는 2013년부터 대한적십자사를 후원해 왔으며, 작년에는 누적 기부액 10억원을 돌파하며 '레드크로스 아너스기업'에 가입했습니다. 지난 7월에는 3억원의 성금을 전달하며 앞으로도 협력을 강화하겠다고 밝혔습니다.",
+        "link": "https://n.news.naver.com/mnews/article/009/0005382649"
+      }
+    ],
+    "topselling": [
+      {
+        "_id": 1,
+        "preview": "../assets/items/product-1.jpg",
+        "name": "Ut inventore ipsa voluptas nulla",
+        "price": 64,
+        "sold": 124
+      },
+      {
+        "_id": 2,
+        "preview": "../assets/items/product-2.jpg",
+        "name": "Exercitationem similique doloremque",
+        "price": 46,
+        "sold": 98
+      },
+      {
+        "_id": 3,
+        "preview": "../assets/items/product-3.jpg",
+        "name": "Doloribus nisi exercitationem",
+        "price": 59,
+        "sold": 74
+      },
+      {
+        "_id": 4,
+        "preview": "../assets/items/product-4.jpg",
+        "name": "Officiis quaerat sint rerum error",
+        "price": 32,
+        "sold": 63
+      },
+      {
+        "_id": 5,
+        "preview": "../assets/items/product-5.jpg",
+        "name": "Sit unde debitis delectus repellendus",
+        "price": 79,
+        "sold": 41
+      }
+    ],
+    "recentsales": [
+      {
+        "_id": 1,
+        "number": "#2457",
+        "customer": "Brandon Jacob",
+        "product": "At praesentium minu",
+        "price": 64,
+        "status": "Approved"
+      },
+      {
+        "_id": 2,
+        "number": "#2147",
+        "customer": "Bridie Kessler",
+        "product": "Blanditiis dolor omnis similique",
+        "price": 47,
+        "status": "Pending"
+      },
+      {
+        "_id": 3,
+        "number": "#2049",
+        "customer": "Ashleigh Langosh",
+        "product": "At recusandae consectetur",
+        "price": 147,
+        "status": "Approved"
+      },
+      {
+        "_id": 4,
+        "number": "#2644",
+        "customer": "Angus Grady",
+        "product": "Ut voluptatem id earum et",
+        "price": 67,
+        "status": "Rejected"
+      },
+      {
+        "_id": 5,
+        "number": "#3592",
+        "customer": "Raheem Lehner",
+        "product": "Sunt similique distinctio",
+        "price": 135,
+        "status": "Approved"
+      }
+    ],
+    "recentactivity": [
+      {
+        "_id": 1,
+        "time": "32 min",
+        "color": "text-success",
+        "content": "Quia quae rerum explicabo officiis beatae",
+        "highlight": "explicabo officiis"
+      },
+      {
+        "_id": 2,
+        "time": "56 min",
+        "color": "text-danger",
+        "content": "Voluptatem blanditiis blanditiis eveniet",
+        "highlight": ""
+      },
+      {
+        "_id": 3,
+        "time": "2 hrs",
+        "color": "text-primary",
+        "content": "Voluptates corrupti molestias voluptatem",
+        "highlight": ""
+      },
+      {
+        "_id": 4,
+        "time": "1 day",
+        "color": "text-info",
+        "content": "Tempore autem saepe occaecati voluptatem tempore",
+        "highlight": "occaecati voluptatem"
+      },
+      {
+        "_id": 5,
+        "time": "2 days",
+        "color": "text-warning",
+        "content": "Est sit eum reiciendis exercitationem",
+        "highlight": ""
+      },
+      {
+        "_id": 6,
+        "time": "4 weeks",
+        "color": "text-muted",
+        "content": "Dicta dolorem harum nulla eius. Ut quidem quidem sit quas",
+        "highlight": ""
+      }
+    ]
+  }

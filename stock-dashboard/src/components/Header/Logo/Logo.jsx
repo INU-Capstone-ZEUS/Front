@@ -14,12 +14,12 @@ export default function Logo() {
                 <img src="logo_light.png"alt="logo"/>
                 <span className="d-none d-lg-block">zeus</span>
             </a>
-            <i
+            {/* <i
                 // 메뉴 아이콘
                 className='bi bi-list toggle-sidebar-btn' 
                 onClick={handleToggleSideBar}
             >
-            </i>
+            </i> */}
         </div>
     )
 }

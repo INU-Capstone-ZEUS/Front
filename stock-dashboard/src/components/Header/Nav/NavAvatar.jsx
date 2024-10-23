@@ -1,5 +1,5 @@
 import React from 'react'
-import profileImg from '../images/user.jpg'
+import profileImg from '../../../images/user.jpg'
 
 
 function NavAvatar() {
