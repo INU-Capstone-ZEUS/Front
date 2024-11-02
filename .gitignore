@@ -23,3 +23,7 @@ venv/
 
 # Windows specific files
 Thumbs.db
+
+api-analysis/app/fullchain.pem
+api-analysis/Dockerfile
+api-analysis/app/privkey.pem

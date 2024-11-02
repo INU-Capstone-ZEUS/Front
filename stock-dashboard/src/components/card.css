@@ -34,3 +34,13 @@
     color: #ff771d;
     background: #ffecdf;
 }
+
+
+.btn-group {
+    margin-left: auto; /* 버튼 그룹을 부모 요소의 오른쪽 끝으로 밀어냅니다 */
+}
+
+.card-header {
+    padding-top: 0;
+    padding-bottom: 0;
+}

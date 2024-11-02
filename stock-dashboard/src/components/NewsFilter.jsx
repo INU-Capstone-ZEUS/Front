@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './card.css';
 
-function CardFilter({ filterChange }) {
+function NewsFilter({ filterChange }) {
     return (
         <div className="filter">
             <a className="icon" href="#" data-bs-toggle="dropdown">
@@ -31,4 +31,4 @@ function CardFilter({ filterChange }) {
     );
 }
 
-export default CardFilter;
+export default NewsFilter;
