@@ -5,6 +5,7 @@ import ReportCharts from './ReportCharts'
 function Reports() {
 
     const [filter, setFilter] = useState('Today');
+    
     const handleFilterChange = filter => {
         setFilter(filter);
     };
@@ -14,7 +15,7 @@ function Reports() {
             <CardFilter filterChange={handleFilterChange}/>
             <div className="card-body">
                 <h5 className="card-title">
-                    Reports <span>/{filter}</span>
+                    주식 차트 <span>/{filter}</span>
                 </h5>
                 <ReportCharts />
             </div>

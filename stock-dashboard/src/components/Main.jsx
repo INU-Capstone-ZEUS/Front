@@ -6,7 +6,7 @@ import Dashboard from './Dashboard'
 function Main() {
   return (
     <main id="main" className='main'>
-        <PageTitle page="뉴스"/>
+        {/* <PageTitle page="뉴스"/> */}
         <Dashboard />
     </main>
   )
